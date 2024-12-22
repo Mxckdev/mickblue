@@ -67,6 +67,12 @@ modules:
     repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
     all-users: false # make users have to enable chezmoi manually
     file-conflict-policy: replace # override changed files with those from the repo
+    
+  - type: akmods
+    base: main # if not specified, classic "main" base is used by default
+    install:
+      - openrazer
+      - openrgb
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
