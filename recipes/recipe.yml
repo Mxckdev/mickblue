@@ -22,7 +22,6 @@ modules:
     system:
       # If no repo information is specified, Flathub will be used by default
       install:
-        - com.discordapp.DiscordCanary
         - io.mpv.Mpv
         - org.qbittorrent.qBittorrent
         - me.kozec.syncthingtk
@@ -61,4 +60,10 @@ modules:
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
-  
+  - type: script
+    snippets:
+      - "flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo"
+      - "flatpak install flathub-beta com.discordapp.DiscordCanary" 
+      - "flatpak override --user --filesystem=home com.discordapp.DiscordCanary"
+      - "flatpak override --user --socket=wayland com.discordapp.DiscordCanary"
+      - "flatpak override --user --env=DISCORD_FLAGS=--required-flag com.discordapp.DiscordCanary"
