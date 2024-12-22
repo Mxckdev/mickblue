@@ -45,14 +45,14 @@ modules:
         - org.gnome.eog
         - com.github.rafostar.Clapper
         - org.mozilla.Thunderbird
-	- type: gnome-extensions
-			install:
+  - type: gnome-extensions
+    install:
         - add-to-desktop
         - wiggle
         - wtmb-window-thumbnails
         - caffeine
       
-      remove:
+    remove:
         -  appindicator-support
         -  applications-menu
         -  blur-my-shell
@@ -61,9 +61,9 @@ modules:
         
 
   - type: chezmoi
-      repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
-      all-users: false # make users have to enable chezmoi manually
-      file-conflict-policy: replace # override changed files with those from the repo
+    repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
+    all-users: false # make users have to enable chezmoi manually
+    file-conflict-policy: replace # override changed files with those from the repo
 
 
     user: {} # Also add Flathub user repo, but no user packages
