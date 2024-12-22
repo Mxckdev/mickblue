@@ -45,6 +45,9 @@ modules:
         - org.gnome.eog
         - com.github.rafostar.Clapper
         - org.mozilla.Thunderbird
+    user: {} # Also add Flathub user repo, but no user packages
+
+
   - type: gnome-extensions
     install:
         - add-to-desktop
@@ -64,9 +67,6 @@ modules:
     repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
     all-users: false # make users have to enable chezmoi manually
     file-conflict-policy: replace # override changed files with those from the repo
-
-
-    user: {} # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
