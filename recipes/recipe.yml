@@ -49,3 +49,18 @@ modules:
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
+  - type: gnome-extensions
+      install:
+        - add-to-desktop
+        - wiggle
+        - wtmb-window-thumbnails
+        - caffeine
+      
+      remove:
+        -  appindicator-support
+        -  applications-menu
+        -  blur-my-shell
+        -  dash-to-dock
+        -  logo-menu
+        
+
