@@ -3,7 +3,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: mickblue
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Mick's personal Bluefin image.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: https://github.com/ublue-os/bluefin/pkgs/container/bluefin-dx
@@ -63,4 +63,9 @@ modules:
         -  dash-to-dock
         -  logo-menu
         
+
+  - type: chezmoi
+      repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
+      all-users: false # make users have to enable chezmoi manually
+      file-conflict-policy: replace # override changed files with those from the repo
 
