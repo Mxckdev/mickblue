@@ -52,7 +52,7 @@ modules:
         - wtmb-window-thumbnails
         - caffeine
       
-    remove:
+    uninstall:
         -  appindicator-support
         -  applications-menu
         -  blur-my-shell
