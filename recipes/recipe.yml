@@ -34,17 +34,17 @@ modules:
 
   - type: gnome-extensions
     install:
-        - add-to-desktop
-        - wiggle
-        - wtmb-window-thumbnails
-        - caffeine
+        - Add to Desktop
+        - Wiggle
+        - WTMB (Window Thumbnails) 
+        - Caffeine
       
     uninstall:
-        -  appindicator-support
-        -  applications-menu
-        -  blur-my-shell
-        -  dash-to-dock
-        -  logo-menu
+        -  AppIndicator and KStatusNotifierItem Support
+        -  Frippery Applications Menu
+        -  Blur my Shell
+        -  Dash to Dock
+        -  Logo Menu
         
 
   - type: chezmoi
