@@ -41,7 +41,7 @@ modules:
       
     uninstall:
         -  AppIndicator and KStatusNotifierItem Support
-        -  Frippery Applications Menu
+        -  Apps Menu
         -  Blur my Shell
         -  Dash to Dock
         -  Logo Menu
