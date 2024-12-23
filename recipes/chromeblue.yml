@@ -82,7 +82,8 @@ modules:
         -  Dash to Dock
         -  Logo Menu
 
-    
+  - type: yafti
+    custom-flatpaks:
         
 
   - type: chezmoi
