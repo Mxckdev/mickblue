@@ -82,10 +82,6 @@ modules:
         -  Dash to Dock
         -  Logo Menu
 
-  - type: yafti
-    custom-flatpaks:
-        
-
   - type: chezmoi
     repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
     all-users: true # make users have to enable chezmoi manually
