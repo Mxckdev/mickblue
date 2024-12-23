@@ -35,6 +35,8 @@ modules:
         - io.mpv.Mpv
         - org.qbittorrent.qBittorrent
         - me.kozec.syncthingtk
+        - com.anydesk.Anydesk
+        - com.obsproject.Studio
     
         #Bluefin
         - io.github.dvlv.boxbuddyrs
