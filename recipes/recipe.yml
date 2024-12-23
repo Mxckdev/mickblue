@@ -41,7 +41,6 @@ modules:
     
         #Bluefin
         - io.github.dvlv.boxbuddyrs
-        - com.github.rafostar.Clapper
         - org.fedoraproject.MediaWriter
         - com.github.tchx84.Flatseal
         - io.github.flattool.Warehouse
