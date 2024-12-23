@@ -1,0 +1,93 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: chromeblue
+# description will be included in the image's metadata
+description: custom Bluefin image.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bluefin-dx
+image-version: 41 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+
+  - type: rpm-ostree
+    install:
+       # yubikey enablement
+       - pam-u2f
+       - pam_yubico
+       - pamu2fcfg
+       - yubikey-manager
+
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
+    system:
+      # If no repo information is specified, Flathub will be used by default
+      install:
+        - io.mpv.Mpv
+        - org.qbittorrent.qBittorrent
+        - me.kozec.syncthingtk
+        - com.anydesk.Anydesk
+        - com.obsproject.Studio
+        - com.google.Chrome
+    
+        #Bluefin
+        - io.github.dvlv.boxbuddyrs
+        - org.fedoraproject.MediaWriter
+        - com.github.tchx84.Flatseal
+        - io.github.flattool.Warehouse
+        - org.gnome.baobab
+        - org.gnome.Calculator
+        - org.gnome.Calendar
+        - org.gnome.Characters
+        - org.gnome.clocks
+        - org.gnome.Connections
+        - org.gnome.Contacts
+        - org.gnome.Papers
+        - com.mattjakeman.ExtensionManager
+        - org.gnome.FileRoller
+        - org.gnome.font-viewer
+        - org.gnome.Logs
+        - org.gnome.Loupe
+        - org.gnome.Maps
+        - org.gnome.NautilusPreviewer
+        - org.gnome.World.PikaBackup
+        - org.gnome.TextEditor
+        - org.gnome.Weather
+        - io.missioncenter.MissionCenter
+        - org.gtk.Gtk3theme.adw-gtk3
+        - org.gtk.Gtk3theme.adw-gtk3-dark
+    user: {} # Also add Flathub user repo, but no user packages
+
+
+  - type: gnome-extensions
+    install:
+        - Add to Desktop
+        - Wiggle
+        - WTMB (Window Thumbnails) 
+        - Caffeine
+      
+    uninstall:
+        -  AppIndicator and KStatusNotifierItem Support
+        -  Apps Menu
+        -  Blur my Shell
+        -  Dash to Dock
+        -  Logo Menu
+
+    
+        
+
+  - type: chezmoi
+    repository: "https://github.com/Mick100864/dotfiles_public" # my dotfiles repo
+    all-users: true # make users have to enable chezmoi manually
+    file-conflict-policy: replace # override changed files with those from the repo
+    
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
