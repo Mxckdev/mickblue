@@ -20,9 +20,6 @@ modules:
 
   - type: rpm-ostree
     install:
-       - open-vm-tools
-       - open-vm-tools-desktop
-       - virtualbox-guest-additions
        # yubikey enablement
        - pam-u2f
        - pam_yubico
