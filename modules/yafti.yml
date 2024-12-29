@@ -1,13 +1,1 @@
-  first-screen:
-    source: yafti.screen.title
-    values:
-      title: "Welcome to mickblue"
-      icon: "/path/to/icon"
-      description: |
-        Setting up Discord Canary flatpak
-      actions:
-      - run: flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-      - run: flatpak install flathub-beta com.discordapp.DiscordCanary
-      - run: flatpak override --user --filesystem=home com.discordapp.DiscordCanary
-      - run: flatpak override --user --socket=wayland com.discordapp.DiscordCanary
-      - run: flatpak override --user --env=DISCORD_FLAGS=--required-flag com.discordapp.DiscordCanary
+
