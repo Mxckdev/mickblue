@@ -33,10 +33,8 @@ modules:
       # If no repo information is specified, Flathub will be used by default
       install:
         - io.mpv.Mpv
-        - org.qbittorrent.qBittorrent
         - me.kozec.syncthingtk
         - com.anydesk.Anydesk
-        - com.obsproject.Studio
     
         #Bluefin
         - io.github.dvlv.boxbuddyrs
@@ -46,15 +44,11 @@ modules:
         - org.gnome.baobab
         - org.gnome.Calculator
         - org.gnome.Calendar
-        - org.gnome.Characters
         - org.gnome.clocks
         - org.gnome.Connections
-        - org.gnome.Contacts
-        - org.gnome.DejaDup
         - org.gnome.Papers
         - com.mattjakeman.ExtensionManager
         - org.gnome.FileRoller
-        - org.gnome.font-viewer
         - org.gnome.Logs
         - org.gnome.Loupe
         - org.gnome.Maps
